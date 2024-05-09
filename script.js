@@ -9,7 +9,13 @@ async function search() {
     } else {
         document.getElementById("not-found").style.display = "none"
         showData()
-        console.log(apiUrl)
+    }
+
+    if (username == "") {
+        document.getElementById("value-none").style.display = "block"
+        document.getElementById("not-found").style.display = "none"
+    } else {
+        document.getElementById("value-none").style.display = "none"
     }
 
     function showData() {

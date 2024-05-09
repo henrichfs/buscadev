@@ -85,6 +85,11 @@ button:hover {
     display: none;
 }
 
+#value-none {
+    color: red;
+    display: none;
+}
+
 #container {
     height: 600px;
     width: 800px;
