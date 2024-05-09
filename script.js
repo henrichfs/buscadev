@@ -9,6 +9,7 @@ async function search() {
     } else {
         document.getElementById("not-found").style.display = "none"
         showData()
+        console.log(apiUrl)
     }
 
     function showData() {
@@ -28,6 +29,14 @@ async function search() {
         document.getElementById("repos").innerText = data.public_repos
         document.getElementById("gists").innerText = data.public_gists
         document.getElementById("bio").innerText = data.bio
+
+        if (data.blog.startsWith("https://")) {
+            document.getElementById("blog-link").href = data.blog
+        } else if (data.blog.startsWith("http://")) {
+            document.getElementById("blog-link").href = data.blog
+        } else {
+            document.getElementById("blog-link").href = "https://" + data.blog
+        }
 
         if (data.company == null) {
             document.getElementById("company").innerText = "Não Informado"
